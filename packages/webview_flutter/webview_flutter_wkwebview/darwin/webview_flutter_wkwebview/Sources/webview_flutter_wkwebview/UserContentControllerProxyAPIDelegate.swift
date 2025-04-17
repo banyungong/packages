@@ -13,6 +13,7 @@ class UserContentControllerProxyAPIDelegate: PigeonApiDelegateWKUserContentContr
     pigeonApi: PigeonApiWKUserContentController, pigeonInstance: WKUserContentController,
     handler: WKScriptMessageHandler, name: String
   ) throws {
+    pigeonInstance.removeScriptMessageHandler(forName: name)
     pigeonInstance.add(handler, name: name)
   }
 
